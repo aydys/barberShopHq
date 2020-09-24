@@ -6,7 +6,9 @@ class CreateClients < ActiveRecord::Migration
       t.text :phone
       t.text :datestamp
       t.text :barber
-      t.text :color      
+      t.text :color
+      
+      t.timestamps
     end
   end
 end
