@@ -32,6 +32,7 @@ post '/visit' do
 	if c.save
 		erb "Thanks, you maked an appointment"
 	else
-		erb "<h2>Error</h2>"
+		@error = c.errors.full_messages.first
+		erb :visit
 	end
 end
