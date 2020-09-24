@@ -25,17 +25,8 @@ get '/visit' do
 end
 
 post '/visit' do
-	@username = params[:username]
-	@phone = params[:phone]
-	@datetime = params[:datetime]
-	@barber = params[:master]
-
-	c = Client.new
-	c.name = @username
-	c.phone = @phone
-	c.datestamp = @datetime
-	c.barber = @barber
+	c = Client.new params[:client]
 	c.save
-	
+
 	erb "Thanks, you maked an appointment"
 end
